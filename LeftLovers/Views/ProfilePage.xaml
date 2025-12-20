@@ -1,0 +1,69 @@
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="LeftLovers.Views.ProfilePage"
+    Title="Profile"
+    BackgroundColor="#F3F5F4">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="24">
+
+            <!-- HEADER -->
+            <Label
+                Text="Profile"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="#111827" />
+
+            <!-- PROFILE CARD -->
+            <Frame
+                CornerRadius="24"
+                Padding="20"
+                BackgroundColor="White"
+                HasShadow="True">
+
+                <VerticalStackLayout Spacing="18">
+
+                    <!-- USERNAME -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label
+                            Text="Username"
+                            FontSize="12"
+                            TextColor="#9CA3AF" />
+
+                        <Label
+                            Text="{Binding Username}"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            TextColor="#111827" />
+                    </VerticalStackLayout>
+
+                    <!-- EMAIL -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label
+                            Text="Email"
+                            FontSize="12"
+                            TextColor="#9CA3AF" />
+
+                        <Label
+                            Text="{Binding Email}"
+                            FontSize="16"
+                            TextColor="#374151" />
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- LOGOUT -->
+            <Button
+                Text="Log Out"
+                HeightRequest="48"
+                CornerRadius="16"
+                BackgroundColor="#111827"
+                TextColor="White"
+                FontAttributes="Bold"
+                Command="{Binding LogoutCommand}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

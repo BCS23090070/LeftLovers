@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:LeftLovers.ViewModels"
+    xmlns:converters="clr-namespace:LeftLovers.Converters"
+    x:Class="LeftLovers.Views.RegisterPage"
+    x:DataType="vm:RegisterViewModel"
+    BackgroundColor="#F3F5F4">
+
+    <!-- 🔹 Local converters -->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:StringNotEmptyConverter x:Key="StringNotEmptyConverter" />
+            <converters:BoolToOpacityConverter x:Key="BoolToOpacityConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="*,*"
+          Padding="24">
+
+        <!-- ===================== -->
+        <!-- 🟢 TOP HALF (BRAND) -->
+        <!-- ===================== -->
+        <VerticalStackLayout
+            Grid.Row="0"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,-150,0,0"
+            Spacing="6">
+
+            <Label
+                Text="Welcome!"
+                FontSize="36"
+                FontAttributes="Bold"
+                TextColor="#111827"
+                HorizontalTextAlignment="Center" />
+
+            <Label
+                Text="Create your account"
+                FontSize="14"
+                TextColor="#6B7280"
+                HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+
+        <!-- ===================== -->
+        <!-- ⚪ BOTTOM HALF (REGISTER) -->
+        <!-- ===================== -->
+        <VerticalStackLayout
+            Grid.Row="1"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            WidthRequest="340"
+            Margin="0,-200,0,0"
+            Spacing="18">
+
+            <!-- REGISTER CARD -->
+            <Frame
+                CornerRadius="24"
+                Padding="20"
+                BackgroundColor="White"
+                HasShadow="True">
+
+                <VerticalStackLayout Spacing="16">
+
+                    <!-- USERNAME -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label
+                            Text="Username"
+                            FontSize="12"
+                            TextColor="#9CA3AF" />
+
+                        <Entry
+                            Placeholder="your name"
+                            Text="{Binding Username}"
+                            BackgroundColor="#F9FAFB" />
+
+                        <Label
+                            Text="{Binding UsernameError}"
+                            FontSize="11"
+                            TextColor="#DC2626"
+                            IsVisible="{Binding UsernameError, Converter={StaticResource StringNotEmptyConverter}}" />
+                    </VerticalStackLayout>
+
+                    <!-- EMAIL -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label
+                            Text="Email"
+                            FontSize="12"
+                            TextColor="#9CA3AF" />
+
+                        <Entry
+                            Placeholder="you@email.com"
+                            Keyboard="Email"
+                            Text="{Binding Email}"
+                            BackgroundColor="#F9FAFB" />
+
+                        <Label
+                            Text="{Binding EmailError}"
+                            FontSize="11"
+                            TextColor="#DC2626"
+                            IsVisible="{Binding EmailError, Converter={StaticResource StringNotEmptyConverter}}" />
+                    </VerticalStackLayout>
+
+                    <!-- PASSWORD -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label
+                            Text="Password"
+                            FontSize="12"
+                            TextColor="#9CA3AF" />
+
+                        <Entry
+                            Placeholder="••••••••"
+                            IsPassword="True"
+                            Text="{Binding Password}"
+                            BackgroundColor="#F9FAFB" />
+                    </VerticalStackLayout>
+
+                    <!-- CONFIRM PASSWORD -->
+                    <VerticalStackLayout Spacing="4">
+                        <Label
+                            Text="Confirm Password"
+                            FontSize="12"
+                            TextColor="#9CA3AF" />
+
+                        <Entry
+                            Placeholder="••••••••"
+                            IsPassword="True"
+                            Text="{Binding ConfirmPassword}"
+                            BackgroundColor="#F9FAFB" />
+
+                        <Label
+                            Text="{Binding PasswordError}"
+                            FontSize="11"
+                            TextColor="#DC2626"
+                            IsVisible="{Binding PasswordError, Converter={StaticResource StringNotEmptyConverter}}" />
+                    </VerticalStackLayout>
+
+                    <!-- REGISTER BUTTON -->
+                    <Button
+                        Text="Create Account"
+                        HeightRequest="48"
+                        CornerRadius="16"
+                        FontAttributes="Bold"
+                        BackgroundColor="#111827"
+                        TextColor="White"
+                        Command="{Binding RegisterCommand}"
+                        IsEnabled="{Binding IsFormValid}"
+                        Opacity="{Binding IsFormValid, Converter={StaticResource BoolToOpacityConverter}}" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- BACK TO LOGIN -->
+            <HorizontalStackLayout
+                HorizontalOptions="Center"
+                Spacing="6">
+
+                <Label
+                    Text="Already have an account?"
+                    FontSize="13"
+                    TextColor="#6B7280" />
+
+                <Label
+                    Text="Log in"
+                    FontSize="13"
+                    FontAttributes="Bold"
+                    TextColor="#111827">
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding BackCommand}" />
+                    </Label.GestureRecognizers>
+
+                </Label>
+
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:LeftLovers.Views"
+    x:Class="LeftLovers.AppShell"
+    Shell.NavBarIsVisible="False">
+
+    <TabBar>
+
+        <!-- 🏠 Active Food -->
+        <ShellContent
+            Title="Food"
+            Icon="a1.png"
+            ContentTemplate="{DataTemplate views:DashboardPage}"
+            Route="DashboardPage" />
+        
+        <!-- Map -->
+        <ShellContent
+            Title="Map"
+            Icon="a4.png"
+            ContentTemplate="{DataTemplate views:MapPage}" 
+            Route="MapPage" />
+        
+        <!-- ➕ Post Food (CENTER TAB) -->
+        <ShellContent
+            Title="Post"
+            Icon="a3.png"
+            ContentTemplate="{DataTemplate views:PostFoodPage}"
+            Route="PostFoodPage" />
+
+        <!-- 📦 My Posts -->
+        <ShellContent
+            Title="My Posts"
+            Icon="a2.png"
+            ContentTemplate="{DataTemplate views:MyPostsPage}"
+            Route="MyPostsPage" />
+
+        <!-- 👤 Profile -->
+        <ShellContent
+            Title="Profile"
+            Icon="a5.png"
+            ContentTemplate="{DataTemplate views:ProfilePage}"
+            Route="ProfilePage" />
+
+    </TabBar>
+</Shell>

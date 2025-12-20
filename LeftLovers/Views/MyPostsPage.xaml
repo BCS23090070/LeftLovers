@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:LeftLovers.Models"
+    x:Class="LeftLovers.Views.MyPostsPage"
+    BackgroundColor="#F3F5F4"
+    Title="My Posts">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="28">
+
+            <!-- ===================== -->
+            <!-- ACTIVE POSTS -->
+            <!-- ===================== -->
+            <Label
+                Text="Active Posts"
+                FontSize="22"
+                FontAttributes="Bold"
+                TextColor="#111827" />
+
+            <CollectionView
+                ItemsSource="{Binding ActivePosts}"
+                SelectionMode="None"
+                EmptyView="No active posts">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:FoodPost">
+
+                        <Frame
+                            Margin="0,0,0,18"
+                            Padding="0"
+                            CornerRadius="24"
+                            HasShadow="True"
+                            BackgroundColor="White">
+
+                            <VerticalStackLayout Spacing="0">
+
+                                <!-- IMAGE -->
+                                <Grid HeightRequest="230">
+                                    <Image
+                                        Source="{Binding Image}"
+                                        Aspect="AspectFill" />
+
+                                    <!-- PICKUP BADGE -->
+                                    <Frame
+                                        Padding="10,4"
+                                        CornerRadius="14"
+                                        BackgroundColor="#E6F4EA"
+                                        HasShadow="False"
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="Start"
+                                        Margin="12">
+
+                                        <Label
+                                            Text="{Binding PickupTime}"
+                                            FontSize="12"
+                                            TextColor="#1E7F43"
+                                            FontAttributes="Bold" />
+                                    </Frame>
+                                </Grid>
+
+                                <!-- CONTENT -->
+                                <VerticalStackLayout Padding="16" Spacing="10">
+
+                                    <Label
+                                        Text="{Binding Title}"
+                                        FontSize="22"
+                                        FontAttributes="Bold"
+                                        TextColor="#111827"
+                                        LineBreakMode="TailTruncation" />
+
+                                    <Label
+                                        Text="{Binding Description}"
+                                        FontSize="14"
+                                        TextColor="#6B7280"
+                                        MaxLines="2"
+                                        LineBreakMode="TailTruncation" />
+
+                                    <Button
+                                        Text="Deactivate"
+                                        BackgroundColor="#111827"
+                                        TextColor="White"
+                                        CornerRadius="14"
+                                        HeightRequest="44"
+                                        FontAttributes="Bold"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.DeactivateCommand}"
+                                        CommandParameter="{Binding .}" />
+
+                                </VerticalStackLayout>
+
+                            </VerticalStackLayout>
+                        </Frame>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- ===================== -->
+            <!-- PAST POSTS -->
+            <!-- ===================== -->
+            <Label
+                Text="Past Posts"
+                FontSize="20"
+                FontAttributes="Bold"
+                TextColor="#6B7280" />
+
+            <CollectionView
+                ItemsSource="{Binding PastPosts}"
+                SelectionMode="None"
+                EmptyView="No past posts">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:FoodPost">
+
+                        <Frame
+                            Margin="0,0,0,18"
+                            Padding="0"
+                            CornerRadius="24"
+                            HasShadow="False"
+                            BackgroundColor="#FFFFFF">
+
+                            <VerticalStackLayout Spacing="0">
+
+                                <Image
+                                    Source="{Binding Image}"
+                                    HeightRequest="230"
+                                    Aspect="AspectFill"
+                                    Opacity="0.55" />
+
+                                <VerticalStackLayout Padding="16" Spacing="8">
+
+                                    <Label
+                                        Text="{Binding Title}"
+                                        FontSize="20"
+                                        FontAttributes="Bold"
+                                        TextColor="#6B7280"
+                                        LineBreakMode="TailTruncation" />
+
+                                    <Label
+                                        Text="{Binding Description}"
+                                        FontSize="14"
+                                        TextColor="#9CA3AF"
+                                        MaxLines="2"
+                                        LineBreakMode="TailTruncation" />
+
+                                    <Label
+                                        Text="Deactivated"
+                                        FontSize="12"
+                                        TextColor="#9CA3AF"
+                                        FontAttributes="Italic" />
+
+                                </VerticalStackLayout>
+
+                            </VerticalStackLayout>
+                        </Frame>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

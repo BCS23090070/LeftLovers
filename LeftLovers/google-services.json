@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "759829644086",
+    "project_id": "leftlovers-d1ea0",
+    "storage_bucket": "leftlovers-d1ea0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759829644086:android:bb29a5a91b8834710aa997",
+        "android_client_info": {
+          "package_name": "com.mycompany.myapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAo_2bfhm4ZoiUxdviGi2DPDkx5r7b_zFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
