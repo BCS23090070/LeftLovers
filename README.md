@@ -1,4 +1,4 @@
-# LeftLovers 🌱
+# LeftLovers 
 
 > **Share Food. Reduce Waste.**
 
@@ -6,7 +6,7 @@ LeftLovers is a cross-platform mobile application built with .NET MAUI that help
 
 ---
 
-## 📱 Features
+##  Features
 
 - **Browse Food Listings** — Discover available food shared by your community
 - **Interactive Map** — Find nearby food on a map with location pins
@@ -16,7 +16,7 @@ LeftLovers is a cross-platform mobile application built with .NET MAUI that help
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Technology | Purpose |
 |------------|---------|
@@ -28,7 +28,7 @@ LeftLovers is a cross-platform mobile application built with .NET MAUI that help
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 LeftLovers/
@@ -43,7 +43,7 @@ LeftLovers/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -78,19 +78,19 @@ LeftLovers/
 
 ---
 
-## 📖 Documentation
+##  Documentation
 
 For detailed usage instructions, see the [User Manual](https://htmlpreview.github.io/?https://github.com/Dexufy/LeftLovers/blob/master/USER_MANUAL.html).
 
 ---
 
-## 📄 License
+##  License
 
 This project is for educational purposes.
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
