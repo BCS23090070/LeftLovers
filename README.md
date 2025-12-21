@@ -80,7 +80,7 @@ LeftLovers/
 
 ## 📖 Documentation
 
-For detailed usage instructions, see the [User Manual](U[SER_MANUAL.md](https://htmlpreview.github.io/?https://github.com/Dexufy/LeftLovers/blob/master/USER_MANUAL.html).
+For detailed usage instructions, see the [User Manual]([USER_MANUAL.md](https://htmlpreview.github.io/?https://github.com/Dexufy/LeftLovers/blob/master/USER_MANUAL.html).
 
 ---
 
