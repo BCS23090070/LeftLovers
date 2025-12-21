@@ -48,6 +48,7 @@
                         <Editor
                             Placeholder="Describe the food (quantity, condition, notes)"
                             AutoSize="TextChanges"
+                            Text="{Binding Description}"
                             HeightRequest="120"
                             FontSize="15" />
 
