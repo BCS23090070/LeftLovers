@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeftLovers User Manual</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #f8f9fa;
+        }
+        @media print {
+            body {
+                background: white;
+                padding: 20px;
+            }
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #2E7D32;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #1a1a1a;
+            border-bottom: 3px solid #2E7D32;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 1.4em;
+            color: #2E7D32;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        h4 {
+            font-size: 1.1em;
+            color: #444;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #2E7D32;
+            color: white;
+        }
+        tr:hover {
+            background: #f5f5f5;
+        }
+        .note {
+            background: #E8F5E9;
+            border-left: 4px solid #2E7D32;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .tip {
+            background: #FFF3E0;
+            border-left: 4px solid #FF9800;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        .nav-diagram {
+            background: #1a1a1a;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .toc {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .toc h2 {
+            margin-top: 0;
+        }
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+        .toc li {
+            margin-bottom: 5px;
+        }
+        .toc a {
+            color: #2E7D32;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            margin-top: 0;
+        }
+        hr {
+            border: none;
+            border-top: 2px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        .footer {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        .print-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2E7D32;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .print-btn:hover {
+            background: #1B5E20;
+        }
+        @media print {
+            .print-btn {
+                display: none;
+            }
+            .section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🌱 LeftLovers User Manual</h1>
+    <p class="tagline">Share Food. Reduce Waste.</p>
+    
+    <p>Welcome to LeftLovers — a mobile application designed to help you share leftover food with your community and reduce food waste. This guide will walk you through all the features and how to use them.</p>
+
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li>1. <a href="#getting-started">Getting Started</a>
+                <ul>
+                    <li>1.1 Creating an Account</li>
+                    <li>1.2 Logging In</li>
+                </ul>
+            </li>
+            <li>2. <a href="#main-features">Main Features</a>
+                <ul>
+                    <li>2.1 Food Dashboard</li>
+                    <li>2.2 Map View</li>
+                    <li>2.3 Posting Food</li>
+                    <li>2.4 My Posts</li>
+                    <li>2.5 Profile</li>
+                </ul>
+            </li>
+            <li>3. <a href="#navigation">Navigation</a></li>
+            <li>4. <a href="#tips">Tips for Best Experience</a></li>
+            <li>5. <a href="#troubleshooting">Troubleshooting</a></li>
+        </ul>
+    </div>
+
+    <div class="section" id="getting-started">
+        <h2>1. Getting Started</h2>
+        
+        <h3>Creating an Account</h3>
+        <p>To use LeftLovers, you'll first need to create an account:</p>
+        <ol>
+            <li><strong>Open the app</strong> — You'll be presented with the Login screen</li>
+            <li><strong>Tap "Create account"</strong> — Located at the bottom of the login form</li>
+            <li><strong>Fill in your details:</strong>
+                <ul>
+                    <li><strong>Username</strong> — Choose a unique display name</li>
+                    <li><strong>Email</strong> — Enter a valid email address</li>
+                    <li><strong>Password</strong> — Create a secure password</li>
+                    <li><strong>Confirm Password</strong> — Re-enter your password to confirm</li>
+                </ul>
+            </li>
+            <li><strong>Tap "Create Account"</strong> — The button will become active once all fields are filled correctly</li>
+            <li><strong>Success!</strong> — You'll be redirected to the main app</li>
+        </ol>
+        
+        <div class="note">
+            <strong>Note:</strong> If there are any errors (e.g., passwords don't match, invalid email), error messages will appear below the relevant fields.
+        </div>
+        
+        <h3>Logging In</h3>
+        <p>If you already have an account:</p>
+        <ol>
+            <li><strong>Enter your Email</strong> — The email you used during registration</li>
+            <li><strong>Enter your Password</strong> — Your account password</li>
+            <li><strong>Tap "Log In"</strong> — You'll be taken to the Food Dashboard</li>
+        </ol>
+    </div>
+
+    <div class="section" id="main-features">
+        <h2>2. Main Features</h2>
+        <p>The app has five main sections, accessible via the bottom navigation bar:</p>
+        
+        <table>
+            <tr>
+                <th>Tab</th>
+                <th>Icon</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><strong>Food</strong></td>
+                <td>🏠</td>
+                <td>Browse available food posts</td>
+            </tr>
+            <tr>
+                <td><strong>Map</strong></td>
+                <td>🗺️</td>
+                <td>See food locations on a map</td>
+            </tr>
+            <tr>
+                <td><strong>Post</strong></td>
+                <td>➕</td>
+                <td>Share your leftover food</td>
+            </tr>
+            <tr>
+                <td><strong>My Posts</strong></td>
+                <td>📦</td>
+                <td>Manage your own posts</td>
+            </tr>
+            <tr>
+                <td><strong>Profile</strong></td>
+                <td>👤</td>
+                <td>View your account & logout</td>
+            </tr>
+        </table>
+
+        <h3>2.1 Food Dashboard</h3>
+        <p>The <strong>Food</strong> tab is your home screen. Here you can browse all active food listings shared by the community.</p>
+        <p><strong>Each food card displays:</strong></p>
+        <ul>
+            <li><strong>Image</strong> — A photo of the food item</li>
+            <li><strong>Pickup Time Badge</strong> — When the food should be picked up (e.g., "Before 8 PM")</li>
+            <li><strong>Title</strong> — Name/description of the food</li>
+            <li><strong>Description</strong> — Additional details about the food</li>
+            <li><strong>Posted by</strong> — The username of the person sharing</li>
+            <li><strong>Timestamp</strong> — When the post was created</li>
+        </ul>
+
+        <h3>2.2 Map View</h3>
+        <p>The <strong>Map</strong> tab shows food locations on an interactive map.</p>
+        <p><strong>Features:</strong></p>
+        <ul>
+            <li><strong>Street Map</strong> — Standard map view showing your area</li>
+            <li><strong>Your Location</strong> — The map shows your current location (if permissions granted)</li>
+            <li><strong>Food Pins</strong> — Each available food post appears as a pin on the map</li>
+        </ul>
+
+        <h3>2.3 Posting Food</h3>
+        <p>The <strong>Post</strong> tab allows you to share your leftover food with the community.</p>
+        <p><strong>To create a new food post:</strong></p>
+        <ol>
+            <li><strong>Navigate to the Post tab</strong></li>
+            <li><strong>Enter food details:</strong>
+                <ul>
+                    <li><strong>Food Title</strong> — Give your food a descriptive name</li>
+                    <li><strong>Description</strong> — Describe the quantity, condition, and any notes</li>
+                    <li><strong>Pickup Time</strong> — Specify when the food should be picked up</li>
+                </ul>
+            </li>
+            <li><strong>Add an Image:</strong> Tap "Select Image" and choose a photo from your device</li>
+            <li><strong>Tap "Post Food"</strong> — Your listing will be shared with the community</li>
+        </ol>
+        
+        <div class="tip">
+            <strong>Tip:</strong> A clear photo and detailed description help others understand exactly what you're offering!
+        </div>
+
+        <h3>2.4 My Posts</h3>
+        <p>The <strong>My Posts</strong> tab lets you manage your food listings.</p>
+        
+        <h4>Active Posts</h4>
+        <p>These are your currently visible listings that others can see. You can tap <strong>"Deactivate"</strong> to remove the post from public view when the food has been claimed.</p>
+        
+        <h4>Past Posts</h4>
+        <p>These are posts you've previously deactivated, displayed with reduced opacity and marked as "Deactivated" for your reference.</p>
+
+        <h3>2.5 Profile</h3>
+        <p>The <strong>Profile</strong> tab displays your account information:</p>
+        <ul>
+            <li><strong>Username</strong> — Your display name</li>
+            <li><strong>Email</strong> — Your registered email address</li>
+            <li><strong>Log Out</strong> — Tap to sign out of your account</li>
+        </ul>
+    </div>
+
+    <div class="section" id="navigation">
+        <h2>3. Navigation</h2>
+        <p>The app uses a <strong>bottom tab bar</strong> for easy navigation:</p>
+        <div style="text-align: center; margin: 20px 0;">
+            <img src="uploaded_image_1766312343652.png" alt="Navigation Bar" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+        </div>
+        <ul>
+            <li><strong>Tap any tab</strong> to switch between sections</li>
+            <li>The current section is highlighted</li>
+            <li>Your position is maintained when switching between tabs</li>
+        </ul>
+    </div>
+
+    <div class="section" id="tips">
+        <h2>4. Tips for Best Experience</h2>
+        
+        <h3>For Food Sharers</h3>
+        <ul>
+            <li>✅ <strong>Be descriptive</strong> — Include quantity, food type, and dietary information</li>
+            <li>✅ <strong>Use clear photos</strong> — Help others see exactly what you're offering</li>
+            <li>✅ <strong>Set realistic pickup times</strong> — Make sure you'll be available</li>
+            <li>✅ <strong>Deactivate promptly</strong> — Remove posts once food is claimed</li>
+            <li>✅ <strong>Include location hints</strong> — Help people find you easily</li>
+        </ul>
+        
+        <h3>For Food Seekers</h3>
+        <ul>
+            <li>✅ <strong>Check pickup times</strong> — Make sure you can collect in time</li>
+            <li>✅ <strong>Act quickly</strong> — Good food goes fast!</li>
+            <li>✅ <strong>Use the map</strong> — Find food close to you</li>
+            <li>✅ <strong>Be respectful</strong> — The community thrives on kindness</li>
+        </ul>
+    </div>
+
+    <div class="section" id="troubleshooting">
+        <h2>5. Troubleshooting</h2>
+        <table>
+            <tr>
+                <th>Issue</th>
+                <th>Solution</th>
+            </tr>
+            <tr>
+                <td>Can't log in</td>
+                <td>Check your email and password are correct</td>
+            </tr>
+            <tr>
+                <td>Registration button disabled</td>
+                <td>Ensure all fields are filled and passwords match</td>
+            </tr>
+            <tr>
+                <td>Map not showing location</td>
+                <td>Enable location permissions in your device settings</td>
+            </tr>
+            <tr>
+                <td>Image not uploading</td>
+                <td>Try a smaller image or check your connection</td>
+            </tr>
+            <tr>
+                <td>Posts not appearing</td>
+                <td>Pull to refresh or check your internet connection</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>About LeftLovers</h2>
+        <p>LeftLovers is built with <strong>.NET MAUI</strong>, making it available on multiple platforms including Android and iOS. The app uses <strong>Firebase</strong> for authentication and data storage.</p>
+        <p><strong>Our Mission:</strong> To reduce food waste by connecting people who have leftover food with those who can use it.</p>
+    </div>
+
+    <div class="footer">
+        <p>Thank you for being part of the LeftLovers community and helping reduce food waste! 🌱</p>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">📄 Save as PDF</button>
+</body>
+</html>
