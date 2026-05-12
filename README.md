@@ -55,7 +55,7 @@ LeftLovers/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/LeftLovers.git
+   git clone https://github.com/Dexufy/LeftLovers.git
    cd LeftLovers
    ```
 
