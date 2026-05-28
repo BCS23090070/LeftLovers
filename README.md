@@ -96,4 +96,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-**Made with ❤️ to reduce food waste**
+**Made with ❤️❤️ to reduce food waste**
